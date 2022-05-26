@@ -7,21 +7,19 @@
 2. Превратите строку "01/01/20 12:10:03.234567" в объект datetime
 
 """
+import datetime as dt
 
 def print_days():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    yest_date = dt.date.today() - dt.timedelta(days=1)
+    tod_date = dt.date.today()
+    d30_date = dt.date.today() - dt.timedelta(days=30)
+    print(f'Yesterday was {yest_date}')
+    print(f'Today is {tod_date}')
+    print(f'30 days ago was {d30_date}')
 
 
 def str_2_datetime(date_string):
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    return dt.datetime.strptime(date_string, '%d/%m/%y %H:%M:%S.%f')
 
 if __name__ == "__main__":
     print_days()
